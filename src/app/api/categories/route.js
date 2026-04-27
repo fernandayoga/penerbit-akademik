@@ -20,6 +20,10 @@ export async function GET() {
 
 export async function POST(request) {
   try {
+    const apiKey = request.headers.get("x-api-key");
+    if (apiKey !== process.env.API_SECRET_KEY) {
+      return NextResponse.json({ error: "Unauthorized" }, { status: 401 });
+    }
     await connectDB()
 
     const body = await request.json()
