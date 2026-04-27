@@ -1,9 +1,21 @@
-import Image from "next/image";
+import HeroSection from '@/components/home/HeroSection'
+import FeaturedProducts from '@/components/home/FeaturedProducts'
+import CategorySection from '@/components/home/CategorySection'
+import CTASection from '@/components/home/CTASection'
 
-export default function Home() {
+export const metadata = {
+  title: 'AkademiJurnal — Platform Publikasi Jurnal & Buku Akademik Digital',
+  description:
+    'Temukan ribuan jurnal ilmiah dan buku akademik digital. Platform terpercaya untuk dosen, peneliti, dan mahasiswa Indonesia.',
+}
+
+export default function HomePage() {
   return (
-    <div className="flex flex-col flex-1 items-center justify-center bg-zinc-50 font-sans dark:bg-black">
-      hai
-    </div>
-  );
+    <>
+      <HeroSection />
+      <FeaturedProducts />
+      <CategorySection />
+      <CTASection />
+    </>
+  )
 }
